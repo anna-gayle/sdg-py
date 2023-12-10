@@ -40,8 +40,6 @@
 
 ...
 
-## Overall Group Collaboration:
-
 ### Individual Assessments:
 
 Shane Jo-Anne Bacay:
@@ -50,21 +48,20 @@ The waste management system is straightforward and pretty basic. It was truly ma
 
 Aethebelle Cabatay:
 
+In developing the Waste Management System with Tkinter, I acknowledge its academic simplicity and the need for practical enhancements. Despite occasional frustrations with error messages, this experience deepened my understanding of Python. Adhering to my team lead's guidance, I prioritized Pythonic code and maintained focused dedication to tasks, demonstrating resourcefulness in navigating unfamiliar territory.
 
 Angel Anya Leona Delos Reyes:
 
-Disappointed that I could not appreciate Python, but that is consequence of learning a language while using it in a project. It is frustrating trying to understand  error messages, but it is what it is.
+I could not appreciate Python as much as I did Java, but that is consequence of learning a language while using it in a project that was done over the course of a week. It is frustrating trying to understand error messages when you don't know what you're doing, but it is what it is. I'm no chef, but I think I served up a mean spaghetti (code). 
 
 Lenard Josh Delos Reyes:
 
-I did what I had to do, what my leader told me and that's all I did. Tried to make my code pythonic from my understanding, though I get easily distracted from other stuff but when I focus on something I don't stop. When things get to unknown territory i either search the internet or ask my leader.
+I did what I had to do, what my leader told me and that's all I did. Tried to make my code pythonic from my understanding, though I get easily distracted from other stuff but when I focus on something I don't stop. When things get to unknown territory I either search the internet or ask my leader.
 
 ### Areas for Improvement:
 - Project was a rush job.
 - Programmers held no affection towards their project.
 - Not as polished as it could've been.
-
-## Additional Comments:
 
 ...
 
