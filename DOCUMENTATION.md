@@ -45,7 +45,7 @@ The `WasteFacilityFrame` class, located in the `facility_waste.py` module, exten
 
 The `WasteCATFrame` class, located in the `waste_c_t.py` module, defines a Tkinter frame for managing waste collection and transportation protocols within the Waste Collection and Transportation System application. The frame includes a scrollable canvas with various widgets, such as labels, separators, entry fields, listboxes, buttons, and a treeview for tabular data display. Functionality encompasses creating, editing, viewing, and deleting waste collection and transportation protocols. Users can input data such as city/town/barangay name, area, frequency, waste collection methods, and transportation modes. Icons are incorporated for actions like adding, removing, saving, and deleting data. The class handles dynamic resizing, data validation, and persistence through JSON files. The module also provides an entry point for testing the frame within a Tkinter window when executed independently.
 
-### `waste_data.json`, `facility_data.json`, and `c_t_data.json'
+### `waste_data.json`, `facility_data.json`, and `c_t_data.json`
 
 .json files that stores data.
 
