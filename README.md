@@ -3,7 +3,7 @@ Extremely basic Waste Management System using Tkinter.
 
 ## Project Overview
 
-This `sdg-py` project was created to fulfill academic requirements, and in accordance with the Sustainable Development Goals.
+This `sdg-py` project was created to fulfill academic requirements, and in accordance with Sustainable Development Goals #12/#13
 
 ## Project Status
 
