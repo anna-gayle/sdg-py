@@ -13,25 +13,25 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 - Create and Manage Waste Profiles
 
-![Screenshot](Default-Window.png)
+![Screenshot](screenshots/Default-Window.png)
 
 - Toggle Menu
 
-![Screenshot](Toggle-Menu.png)
+![Screenshot](screenshots/Toggle-Menu.png)
 
 - Create and Manage Waste Collection and Transportation Protocols
 
-![Screenshot](Sample.png)
+![Screenshot](screenshots/Sample.png)
 
 - Create and Manage Facility and Disposal Profiles
 
-![Screenshot](Sample-v2.png)
+![Screenshot](screenshots/Sample-v2.png)
 
 - Export json files as txt files
 
-![Screenshot](json-txt.png)
+![Screenshot](screenshots/json-txt.png)
 
-![Screenshot](json-txt-v2.png)
+![Screenshot](screenshots/json-txt-v2.png)
 
 ## Technologies Used
 
