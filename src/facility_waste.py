@@ -43,8 +43,6 @@ class WasteFacilityFrame(tk.Frame):
         self.remove_icon = ImageTk.PhotoImage(self.remove_icon)
         self.save_icon = Image.open("assets/icons/save-icon.png")
         self.save_icon = ImageTk.PhotoImage(self.save_icon)
-        self.edit_icon = Image.open("assets/icons/edit-icon.png")
-        self.edit_icon = ImageTk.PhotoImage(self.edit_icon)
         self.delete_icon = Image.open("assets/icons/delete-icon.png")
         self.delete_icon = ImageTk.PhotoImage(self.delete_icon)
 
@@ -86,6 +84,7 @@ class WasteFacilityFrame(tk.Frame):
         address_label.grid(row=4, column=0, padx=5, pady=5, sticky="w")
         self.address_entry = ttk.Entry(create_data_frame, width=30)
         self.address_entry.grid(row=4, column=1, padx=5, pady=5, sticky="w")
+        
         # Facility Type
         facility_type_label = ttk.Label(create_data_frame, text="Facility Type:")
         facility_type_label.grid(row=5, column=0, padx=5, pady=5, sticky="w")
@@ -303,58 +302,9 @@ class WasteFacilityFrame(tk.Frame):
     def on_tree_select(self, event):
         selected_item = self.facility_tree.selection()
         if selected_item:
-            self.edit_button["state"] = tk.NORMAL
             self.delete_button["state"] = tk.NORMAL
         else:
-            self.edit_button["state"] = tk.DISABLED
             self.delete_button["state"] = tk.DISABLED
-
-    def edit_data(self):
-        # Get the selected item from the Treeview
-        selected_item = self.facility_tree.selection()
-
-        if selected_item:
-            # Get the values from the selected item
-            values = self.facility_tree.item(selected_item, 'values')
-
-            # Check if the length of the values tuple is sufficient
-            if len(values) >= 6:
-                # Enable editing mode
-                self.edit_mode = True
-
-                # Populate the entry fields with selected data for editing
-                self.facility_name_entry.delete(0, tk.END)
-                self.facility_name_entry.insert(0, values[0])
-
-                self.facility_area_entry.delete(0, tk.END)
-                self.facility_area_entry.insert(0, values[1])
-
-                self.operating_hours_entry.delete(0, tk.END)
-                self.operating_hours_entry.insert(0, values[2])
-
-                self.address_entry.delete(0, tk.END)
-                self.address_entry.insert(0, values[3])
-
-                # Set default value if facility type is not available in the loaded data
-                facility_type = values[4] if len(values) > 4 else "Landfills"
-                self.facility_type_combobox.set(facility_type)
-
-                # Clear existing data in the selected methods listbox
-                self.selected_methods_listbox.delete(0, tk.END)
-
-                # Check if the disposal methods are available
-                if len(values) > 5 and values[5]:
-                    stored_methods = values[5].split(', ')
-                    for method in stored_methods:
-                        self.selected_methods_listbox.insert(tk.END, method)
-
-                # Disable buttons during editing
-                self.edit_button.config(state=tk.DISABLED)
-                self.delete_button.config(state=tk.DISABLED)
-            else:
-                messagebox.showinfo("Information", "Selected item does not have sufficient data for editing.")
-        else:
-            messagebox.showinfo("Information", "Please select a facility to edit.")
 
     def delete_data(self):
         # Get the selected item from the Treeview
@@ -383,7 +333,6 @@ class WasteFacilityFrame(tk.Frame):
                 self.selected_methods_listbox.delete(0, tk.END)
 
                 # Disable buttons after deletion
-                self.edit_button.config(state=tk.DISABLED)
                 self.delete_button.config(state=tk.DISABLED)
         else:
             messagebox.showinfo("Information", "Please select a facility to delete.")
