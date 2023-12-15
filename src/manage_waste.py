@@ -6,7 +6,42 @@ from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
 
 class ManageWasteDataFrame(tk.Frame):
+    """
+    Frame for managing waste data through a graphical interface.
+
+    Attributes:
+    - canvas: Tkinter canvas for creating a scrollable frame.
+    - scrollbar: Tkinter vertical scrollbar for the scrollable frame.
+    - scrollable_frame: Tkinter frame that can be scrolled.
+    - add_icon, remove_icon, save_icon, delete_icon: Icons for buttons in the frame.
+    - city_entry, available_categories_listbox, stored_categories_listbox, quantity_entry, notes_entry: Input widgets.
+    - delete_button: Button to delete selected waste data.
+    - table_view: Tkinter Treeview for displaying waste data.
+
+    Methods:
+    - __init__: Initializes the ManageWasteDataFrame.
+    - on_frame_configure: Configures the canvas to enable vertical scrolling.
+    - on_canvas_configure: Configures the canvas width based on the window size.
+    - create_widgets: Creates and configures widgets within the frame.
+    - add_category: Adds selected categories to the stored categories listbox.
+    - remove_category: Removes selected stored categories from the listbox.
+    - save_data: Saves entered waste data to a JSON file.
+    - generate_random_id: Generates a random ID for waste data.
+    - save_to_json: Saves data to a JSON file.
+    - load_from_json: Loads data from a JSON file to populate the table view.
+    - refresh_table: Refreshes the table view by clearing and reloading data.
+    - clear_treeview: Clears all entries from the table view.
+    - on_treeview_select: Callback function when a row in the table view is selected.
+    - delete_data: Deletes selected waste data from the table view and JSON file.
+    - delete_from_json: Deletes waste data from the JSON file.
+    """
     def __init__(self, master=None):
+        """
+        Initialize the ManageWasteDataFrame.
+
+        Parameters:
+        - master: Tkinter master window.
+        """
         super().__init__(master)
 
         self.canvas = tk.Canvas(self)
@@ -29,13 +64,28 @@ class ManageWasteDataFrame(tk.Frame):
         self.load_from_json()
 
     def on_frame_configure(self, event):
+         """
+        Configure the canvas to enable vertical scrolling.
+
+        Parameters:
+        - event: Tkinter event triggering the method.
+        """
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
     def on_canvas_configure(self, event):
+        """
+        Configure the canvas width based on the window size.
+
+        Parameters:
+        - event: Tkinter event triggering the method.
+        """
         canvas_width = event.width
         self.canvas.itemconfig(self.scrollable_frame_id, width=canvas_width)
 
     def create_widgets(self):
+        """
+        Create and configure widgets within the frame.
+        """
         # Load the icon image using PIL
         self.add_icon = Image.open("assets/icons/add-icon.png")
         self.add_icon = ImageTk.PhotoImage(self.add_icon)
@@ -159,6 +209,9 @@ class ManageWasteDataFrame(tk.Frame):
         self.scrollable_frame.grid_columnconfigure(0, weight=1)
 
     def add_category(self):
+        """
+        Adds selected categories to the stored categories listbox.
+        """
         selected_categories = self.available_categories_listbox.curselection()
         categories_to_add = [self.available_categories_listbox.get(idx) for idx in selected_categories]
 
@@ -170,6 +223,9 @@ class ManageWasteDataFrame(tk.Frame):
         self.available_categories_listbox.selection_clear(0, tk.END)
 
     def remove_category(self):
+        """
+        Removes selected stored categories from the listbox.
+        """
         selected_stored_categories = self.stored_categories_listbox.curselection()
 
         # Remove selected stored categories
@@ -177,6 +233,9 @@ class ManageWasteDataFrame(tk.Frame):
             self.stored_categories_listbox.delete(idx)
 
     def save_data(self):
+        """
+        Saves entered waste data to a JSON file.
+        """
         try:
             city = self.city_entry.get().strip()
             selected_categories = self.stored_categories_listbox.get(0, tk.END)
@@ -215,9 +274,25 @@ class ManageWasteDataFrame(tk.Frame):
             print(f"Exception: {e}")
 
     def generate_random_id(self):
+        """
+        Generates a random ID for waste data.
+
+        Returns:
+        - Random ID (string).
+        """
         return str(random.randint(1000, 9999))
     
     def save_to_json(self, data, save_path):
+        """
+        Saves data to a JSON file.
+
+        Parameters:
+        - data: Data to be saved.
+        - save_path: Path to the JSON file.
+
+        Returns:
+        - True if successful, False otherwise.
+        """
         try:
             existing_data = []
 
@@ -252,6 +327,9 @@ class ManageWasteDataFrame(tk.Frame):
         return success
 
     def load_from_json(self):
+        """
+        Loads data from a JSON file to populate the table view.
+        """
         try:
             src_folder_path = os.path.join("src", "data")
             load_path = os.path.join(src_folder_path, "waste_data.json")
@@ -297,14 +375,26 @@ class ManageWasteDataFrame(tk.Frame):
             print(f"Exception: {e}")
 
     def refresh_table(self):
+        """
+        Refreshes the table view by clearing and reloading data.
+        """
         self.clear_treeview()
         self.load_from_json()
 
     def clear_treeview(self):
+        """
+        Clears all entries from the table view.
+        """
         for item in self.table_view.get_children():
             self.table_view.delete(item)
 
     def on_treeview_select(self, event):
+        """
+        Callback function when a row in the table view is selected.
+
+        Parameters:
+        - event: Tkinter event triggering the method.
+        """
         selected_item = self.table_view.selection()
 
         if selected_item:
@@ -313,6 +403,9 @@ class ManageWasteDataFrame(tk.Frame):
             self.delete_button.config(state=tk.DISABLED)
 
     def delete_data(self):
+        """
+        Deletes selected waste data from the table view and JSON file.
+        """
         selected_item = self.table_view.selection()
 
         if selected_item:
@@ -345,6 +438,12 @@ class ManageWasteDataFrame(tk.Frame):
                 messagebox.showinfo("Information", "Please select a waste data to delete.")
 
     def delete_from_json(self, selected_id):
+        """
+        Deletes waste data from the JSON file.
+
+        Parameters:
+        - selected_id: ID of the data to be deleted.
+        """
         try:
             src_folder_path = os.path.join("src", "data")
             load_path = os.path.join(src_folder_path, "waste_data.json")
