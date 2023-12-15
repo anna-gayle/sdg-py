@@ -44,7 +44,7 @@
 
 Shane Jo-Anne Bacay:
 
-The waste management system is straightforward and pretty basic. It was truly made to fulfill academic requirements, and will need further enhancements to ever be deployed practically.
+The waste management system is straightforward and pretty basic. It was truly made to fulfill academic requirements, and will need further enhancements (and debugging) to ever be deployed practically.
 
 Aethebelle Cabatay:
 
