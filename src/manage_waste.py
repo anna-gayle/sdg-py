@@ -470,7 +470,6 @@ class ManageWasteDataFrame(tk.Frame):
             print(f"Exception: {e}")
             messagebox.showerror("Error", "Failed to delete waste data. Please try again.")
 
-# Uncomment the following lines for testing the module
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry('800x600')
