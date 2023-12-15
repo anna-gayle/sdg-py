@@ -6,7 +6,42 @@ from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
 
 class WasteFacilityFrame(tk.Frame):
+    """
+    WasteFacilityFrame is a class representing the main frame of the Waste Facility Management application.
+
+    Attributes:
+    - canvas: Canvas widget for scrolling functionality.
+    - scrollbar: Vertical scrollbar for the canvas.
+    - scrollable_frame: Frame inside the canvas to hold widgets.
+    - add_icon, remove_icon, save_icon, delete_icon: Icons for buttons.
+    - facility_name_entry, facility_area_entry, operating_hours_entry, address_entry: Entry widgets for user input.
+    - facility_type_combobox: Combobox for selecting facility type.
+    - available_methods_listbox, selected_methods_listbox: Listboxes for displaying available and selected disposal methods.
+    - facility_tree: Treeview widget to display facility data.
+    - delete_button: Button to delete selected data from the Treeview.
+
+    Methods:
+    - on_frame_configure: Adjusts the canvas scroll region when the frame is configured.
+    - on_canvas_configure: Adjusts the canvas item when the canvas is configured.
+    - create_widgets: Creates and organizes all widgets in the main frame.
+    - add_disposal_method, remove_disposal_method: Methods to handle listbox operations for disposal methods.
+    - save_facility_data: Saves user input data to a JSON file.
+    - load_from_json: Loads data from a JSON file and populates the Treeview.
+    - save_to_json: Saves data to a JSON file.
+    - on_tree_select: Enables delete button when a row is selected.
+    - delete_data, delete_from_json: Handles deletion of data from the Treeview and JSON file.
+    - generate_random_id: Generates a random ID for data entries.
+    - refresh_table: Clears and reloads data into the Treeview.
+    - clear_treeview: Clears data from the Treeview.
+
+    """
     def __init__(self, master=None):
+        """
+        Initializes the WasteFacilityFrame.
+
+        Args:
+        - master: Parent widget.
+        """
         super().__init__(master)
 
         self.canvas = tk.Canvas(self)
@@ -29,13 +64,28 @@ class WasteFacilityFrame(tk.Frame):
         self.load_from_json()
 
     def on_frame_configure(self, event):
+        """
+        Adjusts the canvas scroll region when the frame is configured.
+
+        Args:
+        - event: Event triggering the method.
+        """
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
     def on_canvas_configure(self, event):
+        """
+        Adjusts the canvas item when the canvas is configured.
+
+        Args:
+        - event: Event triggering the method.
+        """
         canvas_width = event.width
         self.canvas.itemconfig(self.scrollable_frame_id, width=canvas_width)
 
     def create_widgets(self):
+        """
+        Creates and organizes all widgets in the main frame.
+        """
         # Load the icon image using PIL
         self.add_icon = Image.open("assets/icons/add-icon.png")
         self.add_icon = ImageTk.PhotoImage(self.add_icon)
@@ -167,8 +217,10 @@ class WasteFacilityFrame(tk.Frame):
         self.delete_button = tk.Button(facility_table_frame, text="Delete", image=self.delete_icon, command=self.delete_data, state=tk.DISABLED, bg="#000080", fg="white", relief="flat")
         self.delete_button.grid(row=0, column=2, pady=(20, 0), padx=(5, 0), sticky="w")  # Adjusted pady value
 
-
     def add_disposal_method(self):
+        """
+        Adds selected disposal methods to the stored methods listbox.
+        """
         selected_methods = self.available_methods_listbox.curselection()
         available_methods = [self.available_methods_listbox.get(idx) for idx in selected_methods]
 
@@ -180,6 +232,9 @@ class WasteFacilityFrame(tk.Frame):
         self.available_methods_listbox.selection_clear(0, tk.END)
 
     def remove_disposal_method(self):
+        """
+        Removes selected stored disposal methods from the listbox.
+        """
         selected_selected_methods = self.selected_methods_listbox.curselection()
 
         # Remove selected stored methods
@@ -187,6 +242,9 @@ class WasteFacilityFrame(tk.Frame):
             self.selected_methods_listbox.delete(idx)
 
     def save_facility_data(self):
+        """
+        Saves user input data to a JSON file.
+        """
         try:
             # Get values from entry fields, combobox, and listbox
             facility_name = self.facility_name_entry.get().strip()
@@ -245,6 +303,9 @@ class WasteFacilityFrame(tk.Frame):
             print(f"Exception: {e}")
 
     def load_from_json(self):
+        """
+        Loads data from a JSON file and populates the Treeview.
+        """
         try:
             # Determine the path to the "src" folder
             src_folder_path = os.path.join("src", "data")
@@ -290,6 +351,13 @@ class WasteFacilityFrame(tk.Frame):
             return
 
     def save_to_json(self, data, save_path):
+        """
+        Saves data to a JSON file.
+
+        Args:
+        - data: Data to be saved.
+        - save_path: Path to the JSON file.
+        """
         try:
             with open(save_path, "w") as json_file:
                 json.dump(data, json_file, indent=4)
@@ -300,6 +368,12 @@ class WasteFacilityFrame(tk.Frame):
         return success
     
     def on_tree_select(self, event):
+        """
+        Enables delete button when a row is selected.
+
+        Args:
+        - event: Event triggering the method.
+        """
         selected_item = self.facility_tree.selection()
         if selected_item:
             self.delete_button["state"] = tk.NORMAL
@@ -307,6 +381,9 @@ class WasteFacilityFrame(tk.Frame):
             self.delete_button["state"] = tk.DISABLED
 
     def delete_data(self):
+        """
+        Handles deletion of data from the Treeview and JSON file.
+        """
         # Get the selected item from the Treeview
         selected_item = self.facility_tree.selection()
 
@@ -339,6 +416,12 @@ class WasteFacilityFrame(tk.Frame):
 
 
     def delete_from_json(self, selected_id):
+        """
+        Deletes selected data entry from the JSON file.
+
+        Args:
+        - selected_id: ID of the selected data entry.
+        """
         try:
             # Determine the path to the "src" folder
             src_folder_path = os.path.join("src", "data")
@@ -379,9 +462,18 @@ class WasteFacilityFrame(tk.Frame):
             print(f"Exception: {e}")
 
     def generate_random_id(self):
+        """
+        Generates a random ID for data entries.
+
+        Returns:
+        - str: Randomly generated ID.
+        """
         return str(random.randint(1000, 9999))
     
     def refresh_table(self):
+        """
+        Clears and reloads data into the Treeview.
+        """
         # Clear existing data in the Treeview
         self.clear_treeview()
 
@@ -389,10 +481,12 @@ class WasteFacilityFrame(tk.Frame):
         self.load_from_json()
 
     def clear_treeview(self):
+        """
+        Clears data from the Treeview.
+        """
         # Implement logic to clear existing data in the treeview
         for item in self.facility_tree.get_children():
             self.facility_tree.delete(item)
-
 
 if __name__ == "__main__":
     root = tk.Tk()
