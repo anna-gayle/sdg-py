@@ -6,7 +6,42 @@ from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
 
 class WasteCATFrame(tk.Frame):
+    """
+    WasteCATFrame is a class representing the main frame of the Waste Collection and Transportation application.
+
+    Attributes:
+    - canvas: Canvas widget for scrolling functionality.
+    - scrollbar: Vertical scrollbar for the canvas.
+    - scrollable_frame: Frame inside the canvas to hold widgets.
+    - add_icon, remove_icon, save_icon, delete_icon: Icons for buttons.
+    - city_entry, area_entry, frequency_entry: Entry widgets for user input.
+    - method_listbox, stored_methods_listbox: Listboxes for displaying and storing selected waste collection methods.
+    - transportation_listbox, stored_transportation_listbox: Listboxes for displaying and storing selected transportation methods.
+    - delete_button: Button to delete selected data from the Treeview.
+    - table_view: Treeview widget to display waste collection and transportation data.
+
+    Methods:
+    - on_frame_configure: Adjusts the canvas scroll region when the frame is configured.
+    - on_canvas_configure: Adjusts the canvas item when the canvas is configured.
+    - create_widgets: Creates and organizes all widgets in the main frame.
+    - add_method, remove_method, add_transportation, remove_transportation: Methods to handle listbox operations.
+    - save_data: Saves user input data to a JSON file.
+    - save_to_json: Saves data to a JSON file.
+    - load_from_json: Loads data from a JSON file and populates the Treeview.
+    - refresh_table: Clears and reloads data into the Treeview.
+    - clear_treeview: Clears data from the Treeview.
+    - on_treeview_select: Enables delete button when a row is selected.
+    - generate_random_id: Generates a random ID for data entries.
+    - delete_data, delete_from_json: Handles deletion of data from the Treeview and JSON file.
+
+    """
     def __init__(self, master=None):
+        """
+        Initializes the WasteCATFrame.
+
+        Args:
+        - master: Parent widget.
+        """
         super().__init__(master)
 
         self.canvas = tk.Canvas(self)
@@ -29,13 +64,28 @@ class WasteCATFrame(tk.Frame):
         self.load_from_json()
 
     def on_frame_configure(self, event):
+        """
+        Adjusts the canvas scroll region when the frame is configured.
+
+        Args:
+        - event: Event triggering the method.
+        """
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
     def on_canvas_configure(self, event):
+        """
+        Adjusts the canvas item when the canvas is configured.
+
+        Args:
+        - event: Event triggering the method.
+        """
         canvas_width = event.width
         self.canvas.itemconfig(self.scrollable_frame_id, width=canvas_width)
 
     def create_widgets(self):
+        """
+        Creates and organizes all widgets in the main frame.
+        """
         # Load the icon image using PIL
         self.add_icon = Image.open("assets/icons/add-icon.png")
         self.add_icon = ImageTk.PhotoImage(self.add_icon)
@@ -210,6 +260,9 @@ class WasteCATFrame(tk.Frame):
         self.table_view.configure(xscrollcommand=table_view_scrollbar_x.set)
 
     def add_method(self):
+        """
+        Adds selected methods to the stored methods listbox.
+        """
         selected_methods = self.method_listbox.curselection()
         available_methods = [self.method_listbox.get(idx) for idx in selected_methods]
 
@@ -221,6 +274,9 @@ class WasteCATFrame(tk.Frame):
         self.method_listbox.selection_clear(0, tk.END)
 
     def remove_method(self):
+        """
+        Removes selected stored methods from the listbox.
+        """
         selected_stored_methods = self.stored_methods_listbox.curselection()
 
         # Remove selected stored methods
@@ -228,6 +284,9 @@ class WasteCATFrame(tk.Frame):
             self.stored_methods_listbox.delete(idx)
         
     def add_transportation(self):
+        """
+        Adds selected transportation modes to the stored transportation listbox.
+        """
         selected_transportation = self.transportation_listbox.curselection()
         available_transportation = [self.transportation_listbox.get(idx) for idx in selected_transportation]
 
@@ -239,6 +298,9 @@ class WasteCATFrame(tk.Frame):
         self.transportation_listbox.selection_clear(0, tk.END)
 
     def remove_transportation(self):
+        """
+        Removes selected stored transportation modes from the listbox.
+        """
         selected_stored_transportation = self.stored_transportation_listbox.curselection()
 
         # Remove selected stored transportation
@@ -246,6 +308,9 @@ class WasteCATFrame(tk.Frame):
             self.stored_transportation_listbox.delete(idx)
 
     def save_data(self):
+        """
+        Saves user input data to a JSON file.
+        """
         try:
             # Get values from entry fields and listboxes
             city = self.city_entry.get().strip()
@@ -305,6 +370,13 @@ class WasteCATFrame(tk.Frame):
             print(f"Exception: {e}")
 
     def save_to_json(self, data, file_path):
+        """
+        Saves data to a JSON file.
+
+        Args:
+        - data: Data to be saved.
+        - file_path: Path to the JSON file.
+        """
         try:
             import json
 
@@ -336,6 +408,9 @@ class WasteCATFrame(tk.Frame):
 
 
     def load_from_json(self):
+        """
+        Loads data from a JSON file and populates the Treeview.
+        """
         try:
             # Determine the path to the "src" folder
             src_folder_path = os.path.join("src", "data")
@@ -367,6 +442,9 @@ class WasteCATFrame(tk.Frame):
             print(e)
 
     def refresh_table(self):
+        """
+        Clears and reloads data into the Treeview.
+        """
         # Clear existing data in the Treeview
         self.clear_treeview()
 
@@ -374,11 +452,20 @@ class WasteCATFrame(tk.Frame):
         self.load_from_json()
 
     def clear_treeview(self):
+        """
+        Clears data from the Treeview.
+        """
         # Implement logic to clear existing data in the Treeview
         for item in self.table_view.get_children():
             self.table_view.delete(item)
 
     def on_treeview_select(self, event):
+        """
+        Enables delete button when a row is selected.
+
+        Args:
+        - event: Event triggering the method.
+        """
         # Enable buttons when a row is selected
         selected_item = self.table_view.selection()
 
@@ -389,9 +476,18 @@ class WasteCATFrame(tk.Frame):
             self.delete_button.config(state=tk.DISABLED)
 
     def generate_random_id(self):
+        """
+        Generates a random ID for data entries.
+
+        Returns:
+        - str: Randomly generated ID.
+        """
         return str(random.randint(1000, 9999))
 
     def delete_data(self):
+        """
+        Handles deletion of data from the Treeview and JSON file.
+        """
         # Your delete data logic goes here
         selected_item = self.table_view.selection()
 
@@ -421,6 +517,12 @@ class WasteCATFrame(tk.Frame):
 
 
     def delete_from_json(self, selected_id):
+        """
+        Deletes selected data entry from the JSON file.
+
+        Args:
+        - selected_id: ID of the selected data entry.
+        """
         try:
             # Determine the path to the "src" folder
             src_folder_path = os.path.join("src", "data")
@@ -441,7 +543,6 @@ class WasteCATFrame(tk.Frame):
 
         except Exception as e:
             messagebox.showerror("Error", f"Failed to delete entry. {str(e)}")
-
 
 if __name__ == "__main__":
     root = tk.Tk()
