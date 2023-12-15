@@ -49,6 +49,8 @@ The `WasteCATFrame` class, located in the `waste_c_t.py` module, defines a Tkint
 
 .json files that stores data.
 
+> Feel free to open source code to view comments.
+
 ## Dependencies
 
 - Python 3.x
