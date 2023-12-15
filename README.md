@@ -1,5 +1,5 @@
 # sdg-py
-Extremely basic Waste Management System using Tkinter.
+An extremely basic Waste Management System using Tkinter.
 
 ## Project Overview
 
