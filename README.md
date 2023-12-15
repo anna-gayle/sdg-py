@@ -37,7 +37,7 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 ## Prerequisites
 
 - Python
-- No third-party dependencies, project uses Tkinter.
+- Check `requirements.txt`.
 
 > Icons by Icons8.
 
