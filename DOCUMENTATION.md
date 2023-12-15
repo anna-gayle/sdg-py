@@ -72,5 +72,6 @@ If you wish to contribute to the project, follow these guidelines:
 ## Contact Information
 
 For questions or support, you can reach out at: 
+https://github.com/anna-gayle
 
 
