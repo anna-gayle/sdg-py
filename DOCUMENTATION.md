@@ -52,7 +52,8 @@ The `WasteCATFrame` class, located in the `waste_c_t.py` module, defines a Tkint
 ## Dependencies
 
 - Python 3.x
-- Tkinter (usually included with Python)
+- Tkinter (usually included with Python, used for UI)
+- Pillow (used for Icons)
 
 ## Contributing
 
