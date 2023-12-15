@@ -6,7 +6,29 @@ from src.waste_c_t import WasteCATFrame
 from src.facility_waste import WasteFacilityFrame
 
 class WasteManagementApp:
+    """
+    Waste Management System Application
+
+    This class represents the main application for managing waste data through a graphical interface.
+
+    Attributes:
+    - root: Tkinter root window.
+    - frames: Dictionary containing different frames for managing waste data, waste categorization,
+              and information related to waste facilities.
+    - current_frame: The currently active frame in the application.
+
+    Methods:
+    - __init__: Initializes the WasteManagementApp.
+    - generate_report: Opens file dialogs to select a JSON file and save the data as a text file.
+    """
+
     def __init__(self, root):
+        """
+        Initialize the WasteManagementApp.
+
+        Parameters:
+        - root: Tkinter root window.
+        """
         self.root = root
         self.root.geometry('800x600')
         self.root.title('Waste Management System')
@@ -27,6 +49,9 @@ class WasteManagementApp:
         self.current_frame.pack(expand=True, fill="both")
 
     def generate_report(self):
+        """
+        Generate a report by converting selected JSON data to a text file.
+        """
         # Open a file dialog for selecting a JSON file
         json_file_path = filedialog.askopenfilename(filetypes=[("JSON files", "*.json"), ("All files", "*.*")])
 
@@ -54,6 +79,13 @@ class WasteManagementApp:
                     print(f"Error saving text file: {str(e)}")
 
 def create_menu_bar(root, app):
+    """
+    Create the menu bar with buttons for switching between frames and generating reports.
+
+    Parameters:
+    - root: Tkinter root window.
+    - app: Instance of the WasteManagementApp.
+    """
     def toggle_menu():
         def collapse_toggle_menu():
             toggle_menu_fm.destroy()
