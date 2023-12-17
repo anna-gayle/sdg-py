@@ -9,7 +9,7 @@
 | **Shane Jo-Anne Bacay** | - Lead tester. <br/> - Debugger. | 23% |
 
 
-### Individual Assessments (1-4):
+# Individual Assessments (1-4):
 
 | Developer                    | Code Reusability | Maintainability | Scalability | Execution | Originality | Overall Impression |
 | ----------------------------- | ----------------- | ---------------- | ------------ | --------- | ------------ | ------------------- |
