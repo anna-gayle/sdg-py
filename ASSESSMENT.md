@@ -1,5 +1,5 @@
 
-# Group Member Grading and Contributions
+# Group Member Grading and Contributions (100%)
 
 | **Group Member**                                | **Contributions**                               | **Evaluation** |
 | ------------------------------------------------- | ----------------------------------------------- | --------------- |
