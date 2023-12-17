@@ -5,7 +5,7 @@
 
 The `sdg-py` project is a Waste Management System built with Python and Tkinter. It serves as an academic project to demonstrate basic functionalities related to waste management.
 
-The Waste Facility Management Application, developed in Python using Tkinter, offers an interface for creating, viewing, and deleting waste facility data. The application features a scrollable canvas, dynamic treeviews, and image icons for actions such as adding, removing, saving, and deleting facility data. Users can input essential information, including facility name, area, operating hours, address, facility type, and waste disposal methods. The data is stored in JSON format, providing portability and structure. The application's functionality encompasses new facility creation, and facility deletion. The code structure revolves around the WasteFacilityFrame class, with methods handling data input, saving/loading from JSON, and table updates. Dependencies include Python 3.x, Tkinter and Pillow. To run the application, execute the provided Python script.
+The Waste Facility Management Application, developed in Python using Tkinter, offers an interface for creating, editing, viewing, and deleting waste facility data. The application features a scrollable canvas, listboxes, and dynamic treeviews. Users can input essential information, including facility name, area, operating hours, address, facility type, and waste disposal methods. The data is stored in JSON format, providing portability and structure. No third-party dependencies. To run the application, execute `main.py`.
 
 ## File Structure
 
@@ -13,7 +13,7 @@ The Waste Facility Management Application, developed in Python using Tkinter, of
 - `app.py`: Application structure and layout.
 - `manage_waste.py`: Manages waste profile
 - `facility_waste.py`: Manages facility and disposal data.
-- `waste_c_t.py`: Manages collection and transportation protocols.
+- `waste_cat.py`: Manages collection and transportation protocols.
 
 ## How to Run the Application
 
@@ -35,19 +35,15 @@ The `app.py` module defines the `WasteManagementApp` class, which serves as the 
 
 ### `manage_waste.py`
 
-The `ManageWasteDataFrame` class, defined in the `manage_waste.py` module, extends the Tkinter `Frame` class to create a scrollable frame for managing waste data within the Waste Management System application. The frame incorporates various widgets for input, display, and manipulation of waste-related information. It utilizes the `Treeview` widget for presenting waste data in a tabular format. The class includes functions for adding, removing, and saving waste data, as well as methods for refreshing the displayed data, handling row selection, and deleting entries. The module also provides an entry point for testing the frame within a Tkinter window when executed independently.
+The `manage_waste.py` module introduces the `ManageWasteDataFrame` class, utilizing the Tkinter library to construct a user-friendly graphical user interface (GUI) for streamlined waste data management. The GUI is centered around a scrollable frame that hosts a `Treeview` widget, presenting waste data in a tabular format. Users have the capability to seamlessly add, edit, and delete entries, along with the flexibility to save and load data to and from a JSON file. Noteworthy features include category management, random ID generation, and an intuitively designed GUI to enhance user experience.
 
 ### `facility_waste.py`
 
-The `WasteFacilityFrame` class, located in the `facility_waste.py` module, extends Tkinter's `Frame` class to construct a scrollable frame dedicated to managing waste facility data. The frame encompasses a variety of widgets for data input, presentation, and manipulation, including labels, entry fields, comboboxes, listboxes, buttons, and a treeview. Utilizing the `Treeview` widget, the class organizes facility data in tabular form. Key functionalities include adding, removing, and saving facility data, along with methods for refreshing the displayed information, managing row selection, and deleting entries. The module serves as a standalone executable, creating an instance of the `WasteFacilityFrame` class within a Tkinter window, providing a user interface for waste facility management operations.
+The `WasteFacilityFrame` class within the `facility_waste.py` module is a Tkinter-based GUI tailored for effective waste facility data management. The interface, housed within a scrollable frame and incorporating a `Treeview` widget, allows users to perform essential operations such as adding, editing, and deleting entries. The module extends its functionality by enabling users to save and load data to/from a JSON file.
 
-### `waste_c_t.py`
+### `waste_cat.py`
 
-The `WasteCATFrame` class, located in the `waste_c_t.py` module, defines a Tkinter frame for managing waste collection and transportation protocols within the Waste Collection and Transportation System application. The frame includes a scrollable canvas with various widgets, such as labels, separators, entry fields, listboxes, buttons, and a treeview for tabular data display. Functionality encompasses creating, viewing, and deleting waste collection and transportation protocols. Users can input data such as city/town/barangay name, area, frequency, waste collection methods, and transportation modes. Icons are incorporated for actions like adding, removing, saving, and deleting data. The class handles dynamic resizing, data validation, and persistence through JSON files. The module also provides an entry point for testing the frame within a Tkinter window when executed independently.
-
-### `waste_data.json`, `facility_data.json`, and `c_t_data.json`
-
-.json files that stores data.
+The `WasteCatFrame` class, meticulously crafted in the `waste_cat.py` module, leverages Tkinter to create an intuitive GUI for efficient waste data management. The GUI encompasses a scrollable frame that integrates a `Treeview` widget, providing a clear tabular representation of waste data. Users can seamlessly execute operations such as adding, editing, and deleting entries, while also having the ability to save and load data to/from a JSON file. The module aims to enhance user experience by providing a visually appealing and user-friendly interface.
 
 > Feel free to open source code to view comments.
 
@@ -55,7 +51,6 @@ The `WasteCATFrame` class, located in the `waste_c_t.py` module, defines a Tkint
 
 - Python 3.x
 - Tkinter (usually included with Python, used for UI)
-- Pillow (used for Icons)
 
 ## Contributing
 
@@ -67,10 +62,9 @@ If you wish to contribute to the project, follow these guidelines:
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request.
 
-## Troubleshooting
+## Troubleshooting and Common Issues
 
-- The delete function works for at least one frame, though in some cases, you may have to manually remove the data from the json file.
-- Weird screen tearing, but not severe.
+- No reported bugs yet. Program should work as intended.
 
 ## Contact Information
 
