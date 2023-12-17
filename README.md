@@ -9,11 +9,11 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 - Create and Manage Waste Profiles
 
-![Screenshot](screenshots/Default-Window.png)
+![Screenshot](screenshots/Default-window.png)
 
 - Toggle Menu
 
-![Screenshot](screenshots/Toggle-Menu.png)
+![Screenshot](screenshots/Toggle-menu.png)
 
 - Create and Manage Waste Collection and Transportation Protocols
 
@@ -23,11 +23,13 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 ![Screenshot](screenshots/Sample-v2.png)
 
-- Export json files as txt files
+- Export json files as txt files or load json files
 
-![Screenshot](screenshots/json-txt.png)
+![Screenshot](screenshots/open-json.png)
 
-![Screenshot](screenshots/json-txt-v2.png)
+![Screenshot](screenshots/create-text.png)
+
+![Screenshot](screenshots/save-as.png)
 
 ## Technologies Used
 
@@ -37,7 +39,6 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 ## Prerequisites
 
 - Python
-- Check `requirements.txt`.
 
 > Icons by Icons8.
 
