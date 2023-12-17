@@ -23,5 +23,4 @@
 - Programmers held no affection towards their project.
 - Not as polished as it could've been.
 
-...
 
