@@ -17,11 +17,11 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 - Create and Manage Waste Collection and Transportation Protocols
 
-![Screenshot](screenshots/Sample.png)
+![Screenshot](screenshots/screen-1.png)
 
 - Create and Manage Facility and Disposal Profiles
 
-![Screenshot](screenshots/Sample-v2.png)
+![Screenshot](screenshots/screen-2.png)
 
 - Export json files as txt files or load json files
 
@@ -30,6 +30,10 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 ![Screenshot](screenshots/create-text.png)
 
 ![Screenshot](screenshots/save-as.png)
+
+- Table selection
+
+![Screenshot](screenshots/sample-selection.png)
 
 ## Technologies Used
 
