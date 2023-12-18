@@ -21,6 +21,6 @@
 ### Areas for Improvement:
 - Project was a rush job.
 - Programmers held no affection towards their project.
-- Not as polished as it could've been.
+- Not as polished as it could've been (looks-wise).
 
 
