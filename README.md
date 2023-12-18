@@ -134,7 +134,9 @@ https://github.com/anna-gayle
 | **Angel Anya Leona Delos Reyes** | - Acting leader. <br/> - Programmed most of the code. <br/> - Debugger. | 30% |
 | **Lenard Josh Delos Reyes** | - Programmed the most of the code after Angel. <br/> - In charge of documentation. | 23% |
 | **Aethelbelle Cabatay** | - Designed the GUI. <br/> - Suggested the topic. | 23% |
-| **Shane Jo-Anne Bacay** | - Lead tester. <br/> - Debugger. | 23% |
+| **Shane Jo-Anne Bacay** | - Lead tester. <br/> - Debugger. | 24% |
+| **Total** | | **100%** |
+
 
 
 # Individual Assessments (1-4):
