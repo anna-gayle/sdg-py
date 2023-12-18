@@ -35,10 +35,11 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 ![Screenshot](screenshots/sample-selection.png)
 
-## Technologies Used
+## Technologies and Programs Used
 
 - Python
 - Tkinter
+- VS Code
 
 ## Prerequisites
 
