@@ -1,0 +1,13 @@
+README.md
+setup.py
+sdgpy.egg-info/PKG-INFO
+sdgpy.egg-info/SOURCES.txt
+sdgpy.egg-info/dependency_links.txt
+sdgpy.egg-info/entry_points.txt
+sdgpy.egg-info/requires.txt
+sdgpy.egg-info/top_level.txt
+src/__init__.py
+src/app.py
+src/facility_waste.py
+src/manage_waste.py
+src/waste_cat.py
