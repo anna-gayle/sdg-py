@@ -47,10 +47,13 @@ This `sdg-py` project was created to fulfill academic requirements in CS 121, an
 
 # Group Members
 
-- Shane Jo-Anne Bacay
-- Aethelbelle Cabatay
-- Angel Anya Leona Delos Reyes
-- Lenard Josh Delos Reyes
+| Sr-Code | Group Member                  |
+| ------- | ----------------------------- |
+| 21-03359      | Shane Jo-Anne Bacay           |
+| 22-01051         | Aethelbelle Cabatay           |
+| 21-06333        | Angel Anya Leona Delos Reyes  |
+| 21-02563         | Lenard Josh Delos Reyes       |
+
 
 # Documentation
 
