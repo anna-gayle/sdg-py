@@ -52,6 +52,12 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 - Angel Anya Leona Delos Reyes
 - Lenard Josh Delos Reyes
 
+### Documentation
+[Link](DOCUMENTATION.md)
+
+### Group and Individual Assessment
+[Link](ASSESSMENT.md)
+
 > Icons by Icons8.
 
 
