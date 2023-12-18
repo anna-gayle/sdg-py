@@ -44,6 +44,13 @@ This `sdg-py` project was created to fulfill academic requirements, and in accor
 
 - Python
 
+## Group Members
+
+- Shane Jo-Anne Bacay
+- Aethelbelle Cabatay
+- Angel Anya Leona Delos Reyes
+- Lenard Josh Delos Reyes
+
 > Icons by Icons8.
 
 
