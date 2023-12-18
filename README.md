@@ -5,7 +5,7 @@ An extremely basic Waste Management System using Tkinter.
 
 This `sdg-py` project was created to fulfill academic requirements, and in accordance with Sustainable Development Goals #12/#13
 
-## Features
+## Features and Screenshots 
 
 - Create and Manage Waste Profiles
 
