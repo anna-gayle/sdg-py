@@ -35,6 +35,10 @@ This `sdg-py` project was created to fulfill academic requirements in CS 121, an
 
 ![Screenshot](screenshots/sample-selection.png)
 
+- Sample .txt output
+
+![Screenshot](screenshots/sample-text.png)
+
 # Technologies and Programs Used
 
 - Python
