@@ -11,6 +11,8 @@
 
 # Individual Assessments (1-4):
 
+## Project
+
 | Developer                    | Code Reusability | Maintainability | Scalability | Execution | Originality | Overall Impression |
 | ----------------------------- | ----------------- | ---------------- | ------------ | --------- | ------------ | ------------------- |
 | Shane Jo-Anne Bacay           | 2                 | 3                | 2            | 3         | 2            | 2.4                 |
@@ -18,7 +20,16 @@
 | Angel Anya Leona Delos Reyes  | 2                 | 2                | 1            | 2         | 2            | 1.8                 |
 | Lenard Josh Delos Reyes       | 3                 | 2                | 2            | 3         | 2            | 2.4                 |
 
-### Areas for Improvement:
+## Performance
+
+| Developer                    | Problem Solving | Collaboration | Coding Proficiency | Communication | Creativity | Overall Impression |
+| ----------------------------- | --------------- | -------------- | ------------------- | -------------- | ----------- | ------------------- |
+| Shane Jo-Anne Bacay           | 2               | 4              | 2                   | 2              | 2           | 2.4                 |
+| Aethebelle Cabatay            | 2               | 4              | 2                   | 2              | 2           | 2.4                 |
+| Angel Anya Leona Delos Reyes  | 2               | 3              | 3                   | 3              | 3           | 2.4                 |
+| Lenard Josh Delos Reyes       | 2               | 4              | 2                   | 2              | 2           | 2.4                 |
+
+## Areas for Improvement:
 - Project was a rush job.
 - Programmers held no affection towards their project.
 - Not as polished as it could've been (looks-wise).
